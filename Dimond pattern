@@ -1,0 +1,60 @@
+import java.io.*;
+class Pattern
+{
+	public static void main(String args[])throws IOException 
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		/*
+			n=7
+			then
+			   *
+			  ***
+			 *****
+			*******
+			 *****
+			  ***
+			   *
+		*/
+		System.out.println("Enter max Number of Stars");
+		int n= Integer.parseInt(br.readLine());//7
+		int b=2;int a=n/b;//a=3 {space}
+		int c=1;int d=1,w=a;int z,v;//d=no. of stars
+		while(d<=n)//1st part
+		{
+				for(z=1;z<=a;z++)//spacing
+				{
+					System.out.print(" ");
+				}//end of for loop (spacing)
+				for(v=1;v<=c;v++)//stars
+				{
+					System.out.print("*");
+				}	//end of for loop(stars)
+			System.out.println();
+			if(c==1)
+				d+=1;
+			else
+				d+=2;
+			c+=2;
+			a-=1;
+		}//end of while loop(1st part)
+		d=n;n=1;a+=1;c-=2;
+		while(d>=n)//2nd part
+		{
+			for(z=1;z<=a;z++)//spacing2
+			{
+				System.out.print(" ");
+			} //end of for loop(spacing2)
+			for(v=1;v<=c;v++)//stars2
+			{
+				System.out.print("*");
+			}	//end of for loop(stars2)
+		System.out.println();
+		if(c==1)
+			d-=1;
+		else
+			d-=2;
+		c-=2;
+		a+=1;
+		}//end of while loop 2nd part
+	}//end of main method
+}//end of class defintion
